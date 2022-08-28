@@ -28,36 +28,18 @@ services:
       dockerfile: Dockerfile
     container_name: flask
     environment:
-      API_KEY: '_zUYQ83k!x34%nh('
-      JWT_SECRET: "_zUYQ83k!x34%nh("
-      FLASK_ENV: "production"
-      OAUTH_CLIENT_ID : '802585832012-jgt4h595tr7464i4d5gf5p2q3ghks60j.apps.googleusercontent.com'
-      OAUTH_CLIENT_SECRET : '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'
-      APP_SECRET_KEY : "$$2a$$12$$C6FmFga.nd8OoIE9M95OFeT7tdrTsvXY2eTdoOvTMgAvXf8/.U8uS"
-      CREATE_RESOURCE_USER_ADDRESS : "https://faketrade.online/api/users"
-      MAILJECT_API_KEY: '804213a7439973dabbdf06951772282c'
-      MAILJECT_API_PASSWORD: 'c2b832a40a187398faedc5195a111744'
-      APP_ENV: "prod"
-      APP_DEBUG: "True"
-      API_KEY_HASH: "$$2a$$12$$C6FmFga.nd8OoIE9M95OFeT7tdrTsvXY2eTdoOvTMgAvXf8/.U8uS"
-      FAKETRADE_MONGO_STRING: "mongodb://root_user:mongopassword1521@mongoD:27017"
-    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "flask_api.create_app:create_app()"
+      FLASK_APP: "app/create_app.py"
+      FLASK_ENV: "development"
+      FAKETRADE_MONGO_STRING: "mongodb://mongo:27017/fakeTrade"
     volumes:
-      - ./:/var/www
+      - "./:/var/www:rw"
     networks:
       fake_trade_bridge:
         aliases:
           - flask-app
   mongoD:
     image: mongo
-    container_name: mongoD
-    restart: unless-stopped
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root_user
-      MONGO_INITDB_ROOT_PASSWORD: mongopassword1521
     networks:
       - fake_trade_bridge
-    volumes :
-    - /data/db:/data/db
 networks:
   fake_trade_bridge:

@@ -1,12 +1,10 @@
-FROM python:3.7-slim
-
-ENV CONTAINER_HOME=/var/www
-
-ADD . $CONTAINER_HOME
-WORKDIR $CONTAINER_HOME
+FROM python:3.9
+ADD . /apiAuth
+WORKDIR /apiAuth
+EXPOSE 5001
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 RUN pip install Authlib Flask
-RUN pip install --upgrade google-auth
-RUN pip3 install pymongo
-RUN pip install -r $CONTAINER_HOME/requirements.txt
+ENV FLASK_APP=app/create_app.py
+ENV JWT_SECRET="secret"
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5001"]

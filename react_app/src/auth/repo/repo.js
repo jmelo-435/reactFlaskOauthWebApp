@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import { toInteger } from "lodash";
 
-const root = "http://localhost";
+const root = "";
 const apiKey = "_zUYQ83k!x34%nh(";
 
 const AuthEndpoints = Object.freeze({
