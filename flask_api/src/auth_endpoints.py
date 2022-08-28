@@ -38,6 +38,8 @@ def login():
     
 @valid_api_key_required
 def login_web():
+    if (request.method=='PUT'):
+        return create_user()
     provided_user_data= request.json
     session_id = str(uuid4())
     try:
