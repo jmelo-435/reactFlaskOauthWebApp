@@ -1,6 +1,6 @@
 from flask import Flask
 from .src.auth_endpoints import create_user,login, change_password, request_reset_password_web, grant_refresh_and_session_token, login_google,authorize_google,log_out,confirm_email, login_web,request_reset_password, reset_password,login_google_token,test, resend_confirmation_email,grant_refresh_and_session_token_web
-from app.env_var import get_app_secret_key
+from .env_var import get_app_secret_key
 
 
 

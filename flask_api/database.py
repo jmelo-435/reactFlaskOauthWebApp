@@ -1,5 +1,5 @@
 import pymongo
-from app.env_var import get_db_string
+from .env_var import get_db_string
 
 
 def get_db():
