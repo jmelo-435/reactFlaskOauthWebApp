@@ -7,7 +7,7 @@ from .env_var import get_app_secret_key
 def create_app():
     application = Flask(__name__)
     application.secret_key = get_app_secret_key()
-    application.debug = False
+    application.debug = True
     
     application.add_url_rule('/api', 'test', test, methods=['OPTIONS','GET'])
     application.add_url_rule('/api/users', 'ctUser', create_user, methods=['PUT','OPTIONS'])
