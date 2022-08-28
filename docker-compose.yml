@@ -41,7 +41,7 @@ services:
       APP_DEBUG: "True"
       API_KEY_HASH: "$$2a$$12$$C6FmFga.nd8OoIE9M95OFeT7tdrTsvXY2eTdoOvTMgAvXf8/.U8uS"
       FAKETRADE_MONGO_STRING: "mongodb://root_user:mongopassword1521@mongoD:27017"
-    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app.create_app:create_app()"
+    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "flask_api.create_app:create_app()"
     volumes:
       - ./:/var/www
     networks:
