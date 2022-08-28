@@ -11,5 +11,5 @@ def compare_keys(key):
 #           {"$project": {"_id":0,  "hash":1}}
 #	])
 #    api_key_hash=[u for u in api_key_hash][0]
-  api_key_hash = os.environ['API_KEY_HASH']
+  api_key_hash = '$2a$12$C6FmFga.nd8OoIE9M95OFeT7tdrTsvXY2eTdoOvTMgAvXf8/.U8uS'
   return bcrypt.checkpw(key.encode(),api_key_hash.encode())

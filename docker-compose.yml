@@ -28,7 +28,7 @@ services:
       dockerfile: Dockerfile
     container_name: flask
     environment:
-      FLASK_APP: "app/create_app.py"
+      FLASK_APP: "/var/www/flask_api/create_app.py"
       FLASK_ENV: "development"
       FAKETRADE_MONGO_STRING: "mongodb://mongo:27017/fakeTrade"
     volumes:
