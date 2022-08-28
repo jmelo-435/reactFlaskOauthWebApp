@@ -1,0 +1,63 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:1.15
+    container_name: nginx
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+    networks:
+      - fake_trade_bridge
+    depends_on:
+      - react-app
+  react-app:
+    build:
+      context: ./react_app
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./react_app/src:/user/src/react_app/src
+    container_name: react-app
+    networks:
+      fake_trade_bridge:
+        aliases:
+          - react-app
+  flask:
+    build:
+      context: ./flask_api
+      dockerfile: Dockerfile
+    container_name: flask
+    environment:
+      API_KEY: '_zUYQ83k!x34%nh('
+      JWT_SECRET: "_zUYQ83k!x34%nh("
+      FLASK_ENV: "production"
+      OAUTH_CLIENT_ID : '802585832012-jgt4h595tr7464i4d5gf5p2q3ghks60j.apps.googleusercontent.com'
+      OAUTH_CLIENT_SECRET : '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'
+      APP_SECRET_KEY : "$$2a$$12$$C6FmFga.nd8OoIE9M95OFeT7tdrTsvXY2eTdoOvTMgAvXf8/.U8uS"
+      CREATE_RESOURCE_USER_ADDRESS : "https://faketrade.online/api/users"
+      MAILJECT_API_KEY: '804213a7439973dabbdf06951772282c'
+      MAILJECT_API_PASSWORD: 'c2b832a40a187398faedc5195a111744'
+      APP_ENV: "prod"
+      APP_DEBUG: "True"
+      API_KEY_HASH: "$$2a$$12$$C6FmFga.nd8OoIE9M95OFeT7tdrTsvXY2eTdoOvTMgAvXf8/.U8uS"
+      FAKETRADE_MONGO_STRING: "mongodb://root_user:mongopassword1521@mongoD:27017"
+    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app.create_app:create_app()"
+    volumes:
+      - ./:/var/www
+    networks:
+      fake_trade_bridge:
+        aliases:
+          - flask-app
+  mongoD:
+    image: mongo
+    container_name: mongoD
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root_user
+      MONGO_INITDB_ROOT_PASSWORD: mongopassword1521
+    networks:
+      - fake_trade_bridge
+    volumes :
+    - /data/db:/data/db
+networks:
+  fake_trade_bridge:

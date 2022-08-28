@@ -1,0 +1,9 @@
+gunicorn
+Flask
+pymongo
+bcrypt
+pyjwt[crypto]
+Authlib
+requests
+mailjet_rest
+itsdangerous
