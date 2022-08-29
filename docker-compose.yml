@@ -22,11 +22,11 @@ services:
       fake_trade_bridge:
         aliases:
           - react-app
-  flask:
+  flask-auth:
     build:
       context: ./flask_api
       dockerfile: Dockerfile
-    container_name: flask
+    container_name: flask-auth
     environment:
       FLASK_APP: "/var/www/flask_api/create_app.py"
       FLASK_ENV: "development"
@@ -37,7 +37,26 @@ services:
       fake_trade_bridge:
         aliases:
           - flask-app
-  mongoD:
+  flask-resource:
+    build:
+      context: ./flask_resource_api
+      dockerfile: Dockerfile
+    container_name: flask-resource
+    environment:
+      FLASK_APP: "/var/www/flask_resource_api/create_app.py"
+      FLASK_ENV: "development"
+      FAKETRADE_MONGO_STRING: "mongodb://mongo:27017/fakeTrade"
+    volumes:
+      - "./:/var/www:rw"
+    networks:
+      fake_trade_bridge:
+        aliases:
+          - flask-resource-app
+  mongo-auth:
+    image: mongo
+    networks:
+      - fake_trade_bridge
+  mongo-resource:
     image: mongo
     networks:
       - fake_trade_bridge

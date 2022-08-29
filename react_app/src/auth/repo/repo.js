@@ -11,18 +11,18 @@ import {
 import axios from "axios";
 import { toInteger } from "lodash";
 
-const root = "http://flask:5001";
+const root = "";
 const apiKey = "_zUYQ83k!x34%nh(";
 
 const AuthEndpoints = Object.freeze({
-  Api: "/api",
-  ApiUsers: "/api/web/users",
-  ApiUserPassword: "/api/user/password",
-  ApiUserPasswordReset: "/api/web/user/password_reset",
-  ApiUserRefreshToken: "/api/web/user/refresh_token",
-  ApiUserLogout: "/api/user/logout",
-  ApiUsersGoogleToken: "/api/users/google_token",
-  ApiUsersResendConfirmation: "/api/users/email_confirmation",
+  Api: "/api_auth",
+  ApiUsers: "/api_auth/web/users",
+  ApiUserPassword: "/api_auth/user/password",
+  ApiUserPasswordReset: "/api_auth/web/user/password_reset",
+  ApiUserRefreshToken: "/api_auth/web/user/refresh_token",
+  ApiUserLogout: "/api_auth/user/logout",
+  ApiUsersGoogleToken: "/api_auth/users/google_token",
+  ApiUsersResendConfirmation: "/api_auth/users/email_confirmation",
 });
 
 const Methods = Object.freeze({
