@@ -1,0 +1,7 @@
+gunicorn
+Flask
+pymongo
+bcrypt
+pyjwt[crypto]
+schedule
+requests
