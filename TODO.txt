@@ -1,1 +1,1 @@
--add resource api container to enviroment
+-setup correct connection btwen resource and auth api

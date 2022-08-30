@@ -32,7 +32,7 @@ def get_app_secret_key():
     
 def get_create_resource_user_address():
     if os.environ['FLASK_ENV']=='development':
-        return 'http://api-api-1:5000/api/users'
+        return '/api_res/users'
     if os.environ['FLASK_ENV']=='production':
         return os.environ['CREATE_RESOURCE_USER_ADDRESS']
 
