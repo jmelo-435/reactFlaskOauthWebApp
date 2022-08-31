@@ -50,7 +50,7 @@ def repo_resend_confirmation_email(email):
 
 def send_confirmation_email(email):
     token = generate_url_token(email)
-    confirm_url = "faketrade.online/api_auth/user/email"
+    confirm_url = "faketrade.online/api_auth/user/email"+token
     html = render_template('confirmation_email.html', confirm_url=confirm_url, aplicativo = "Fake Trade")
     data = {
   'Messages': [
