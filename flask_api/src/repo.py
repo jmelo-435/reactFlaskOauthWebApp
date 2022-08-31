@@ -17,7 +17,7 @@ access_list =["http://192.168.15.7:3000"]
 def send_reset_password_email(email):
     
     token = generate_url_token(email)
-    reset_url = url_for('resetPass', token=token, _external=True)
+    reset_url = "faketrade.online/api_auth/user/password/"+token
     html = render_template('reset_password_email.html', reset_url = reset_url, nome = email)
     data = {
   'Messages': [
@@ -50,7 +50,7 @@ def repo_resend_confirmation_email(email):
 
 def send_confirmation_email(email):
     token = generate_url_token(email)
-    confirm_url = url_for('confirm', token=token, _external=True)
+    confirm_url = "faketrade.online/api_auth/user/email"
     html = render_template('confirmation_email.html', confirm_url=confirm_url, aplicativo = "Fake Trade")
     data = {
   'Messages': [
