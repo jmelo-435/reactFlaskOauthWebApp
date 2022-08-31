@@ -34,7 +34,9 @@ def get_create_resource_user_address():
     if os.environ['FLASK_ENV']=='development':
         return 'http://localhost/api_res/users'
     if os.environ['FLASK_ENV']=='production':
-        return os.environ['CREATE_RESOURCE_USER_ADDRESS']
+    #    return os.environ ['CREATE_RESOURCE_USER_ADDRESS']
+        return  'http://localhost/api_res/users'
+    
 
 def get_mailject_api_key():
     if os.environ['FLASK_ENV']=='development':
