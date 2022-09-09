@@ -1,7 +1,8 @@
-from flask import Flask, jsonify, make_response, request
+from flask import Flask, jsonify, make_response, request,send_from_directory
 from ..database import get_db
+import os
 from ..verify_api_key import compare_keys
-from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close
+from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance
 from .security_decorators import valid_api_key_required
 
 db = get_db()
@@ -41,5 +42,26 @@ def get_stocks_list():
         return make_response({"msg": "Algo deu errado.","success": False}), 500
 
 @valid_api_key_required
+def get_stocks_list_days_ago(days):
+    try:
+        stock_list = return_stock_prices_days_ago(days)
+        return jsonify({"list": stock_list,"success": True})
+    except :
+        return make_response({"msg": "Algo deu errado.","success": False}), 500
+    
+@valid_api_key_required
+def update_relevance():
+    try:
+        list =update_stocks_relevance()
+        return jsonify({"success": True, "list":list})
+    except :
+        return make_response({"msg": "Algo deu errado.","success": False}), 500
+
+@valid_api_key_required
 def update_historical_close():
     return _set_historical_close()
+
+def retrieve_stock_image(ativo):
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    uploads_path = os.path.join(basedir, 'imgStocks')
+    return send_from_directory(uploads_path, ativo+".gif")
