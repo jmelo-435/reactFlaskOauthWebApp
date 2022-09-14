@@ -43,11 +43,11 @@ def get_stocks_list():
 
 @valid_api_key_required
 def get_stocks_list_days_ago(days):
-    try:
+    #try:
         stock_list = return_stock_prices_days_ago(days)
         return jsonify({"list": stock_list,"success": True})
-    except :
-        return make_response({"msg": "Algo deu errado.","success": False}), 500
+    #except :
+     #   return make_response({"msg": "Algo deu errado.","success": False}), 500
     
 @valid_api_key_required
 def update_relevance():

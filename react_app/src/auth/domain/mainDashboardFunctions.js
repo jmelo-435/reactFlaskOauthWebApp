@@ -33,25 +33,25 @@ export async function returnMainDashStocksInfoList() {
         stocksDataList.push(stockData)
     })
 
-    const stocksListWeekAgo = await getStocksListDaysAgo(7)
-    const stocksListMonthAgo = await getStocksListDaysAgo(31)
-    const stocksListYearAgo = await getStocksListDaysAgo(350)
+    const stocksListWeekAgo = await getStocksListDaysAgo(365)
+    const stocksListMonthAgo = await getStocksListDaysAgo(365*5)
+    const stocksListYearAgo = await getStocksListDaysAgo(365*10)
     stocksDataList.map((stockData) => {
         stocksListWeekAgo.stocksList.map((laterPrice) => {
             if (stockData.id === laterPrice._id) {
-                stockData.weekVariation = returnPercentage(stockData.price, laterPrice.priceDaysAgo)
+                stockData.weekVariation = returnPercentage(stockData.price, laterPrice.priceDaysAgo[0]?.adjClose)
             }
         })
         stocksListYearAgo.stocksList.map((laterPrice) => {
             if (stockData.id === laterPrice._id) {
-                stockData.yearVariation = returnPercentage(stockData.price, laterPrice.priceDaysAgo)
+                stockData.yearVariation = returnPercentage(stockData.price, laterPrice.priceDaysAgo[0]?.adjClose)
 
             }
 
         })
         stocksListMonthAgo.stocksList.map((laterPrice) => {
             if (stockData.id === laterPrice._id) {
-                stockData.monthVariation = returnPercentage(stockData.price, laterPrice.priceDaysAgo)
+                stockData.monthVariation = returnPercentage(stockData.price, laterPrice.priceDaysAgo[0]?.adjClose)
 
             }
 

@@ -17,7 +17,7 @@ const StockPriceCard = ({ stock, id }) => {
             </div>
             <div className="bottomCard">
 
-                <span><h3>Semana</h3><h3>Mês</h3><h3>Ano</h3></span>
+                <span><h3>Ano</h3><h3>5Anos</h3><h3>10Anos</h3></span>
                 <span>
                     <VariationDisplay variation={stock.weekVariation} />
                     <VariationDisplay variation={stock.monthVariation} />
