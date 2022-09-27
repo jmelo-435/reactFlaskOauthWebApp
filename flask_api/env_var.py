@@ -8,13 +8,13 @@ def get_jwt_secret():
 
 def get_oauth_client_id():
     if os.environ['FLASK_ENV']=='development':
-        return '802585832012-jgt4h595tr7464i4d5gf5p2q3ghks60j.apps.googleusercontent.com'
+        return 'google_key.apps.googleusercontent.com'
     if os.environ['FLASK_ENV']=='production':
         return os.environ['OAUTH_CLIENT_ID']
 
 def get_oauth_client_secret():
     if os.environ['FLASK_ENV']=='development':
-        return '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'
+        return 'google_secret'
     if os.environ['FLASK_ENV']=='production':
         return os.environ['OAUTH_CLIENT_SECRET']
     
