@@ -37,12 +37,12 @@ def get_create_resource_user_address():
 
 def get_mailject_api_key():
     if os.environ['FLASK_ENV']=='development':
-        return '804213a7439973dabbdf06951772282c'
+        return 'mailject_key'
     if os.environ['FLASK_ENV']=='production':
         return os.environ['MAILJECT_API_KEY']
     
 def get_mailject_api_password():
     if os.environ['FLASK_ENV']=='development':
-        return 'c2b832a40a187398faedc5195a111744'
+        return 'mailject_pass'
     if os.environ['FLASK_ENV']=='production':
         return os.environ['MAILJECT_API_PASSWORD']
