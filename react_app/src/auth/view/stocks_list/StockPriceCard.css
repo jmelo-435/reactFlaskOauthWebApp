@@ -1,0 +1,94 @@
+.stockPriceCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 150px;
+    margin: 0.5rem;
+    position: relative;
+    background-color: #263238;
+    border-radius: 0.5rem;
+}
+.stockPriceCard:hover{
+transform: scale(1.25,1.25);  
+}
+.stockPriceCard h1{
+    color: #607D8B;
+    margin: 0px;
+    font-size: 17px;
+
+}
+
+.mainTopoDisplay{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+}
+
+.stockPriceCard img{
+width: 64px;
+height: 32px;
+margin-right: 0.5rem;
+}
+.stockPriceCard h4{
+    font-size: small;
+    color: #607D8B;
+    
+
+}
+.price{
+    display: flex;
+    flex-direction: line;
+    justify-content: flex-end
+}
+.price h3{
+    align-self:flex-end;
+    font-size: 7px;
+    color: #607D8B;
+    margin:0%;
+}
+.price h2{
+    align-self: center;
+    font-size:40px;
+    margin:0%;
+
+}
+.topoCard{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-top:0.5rem;
+}
+.bottomCard{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+
+}
+.stockPriceCard span h3{
+    align-self:flex-end;
+    font-size: 10px;
+    color: #607D8B;
+    margin:0%;
+}
+.stockPriceCard span{
+    display: flex;
+    flex-direction: line;
+    justify-content: space-between;
+}
+
+.posVariationDisplay{
+color: rgb(15, 223, 15);
+}
+.negVariationDisplay{
+color:crimson;
+}
+
+.posVariationDisplay h6,.negVariationDisplay h6{
+    margin: 0;
+    font-size: 10px;
+}
+

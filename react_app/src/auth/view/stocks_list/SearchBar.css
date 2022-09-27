@@ -1,0 +1,26 @@
+.searchBar {
+    grid-area: searchBar;
+    background: #90A4AE;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.searchBar input{
+    width: 90%;
+    height: 40px;
+    font-size: 1.5rem;
+
+}
+
+.searchBar h1 {
+    color: #FFFFFF;
+    font-family: Inter;
+    margin-left: 2rem;
+
+
+
+}
