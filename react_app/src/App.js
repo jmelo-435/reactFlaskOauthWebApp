@@ -1,9 +1,9 @@
 import React from "react";
-import './auth/view/Auth.css'
-import AuthMainContent from "./auth/view/AuthMainContent";
-import MainDashboardBody from "./auth/view/MainDashboardBody";
-import TopBanner from "./auth/view/TopBanner";
-import BottomBanner from "./auth/view/BottomBanner"
+import './auth/view/auth/Auth.css'
+import AuthMainContent from "./auth/view/auth/AuthMainContent";
+import MainDashboardBody from "./auth/view/stocks_list/MainDashboardBody";
+import TopBanner from "./auth/view/auth/TopBanner";
+import BottomBanner from "./auth/view/auth/BottomBanner"
 
 const App =() =>{
   return(
