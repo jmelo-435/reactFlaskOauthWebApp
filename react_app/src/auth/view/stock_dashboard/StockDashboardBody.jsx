@@ -4,6 +4,7 @@ import "./StockDashboardBody.css"
 import {stockProffitDisplay}from "./StockProffitDisplay.jsx"
 
 const StockDashboardBody = ({ stockData }) => {
+    const keys = Object.keys(stockData.proffits)
     return (
         <div className="stockDashboardBody">
             <div className="item stockHeader">
@@ -17,7 +18,7 @@ const StockDashboardBody = ({ stockData }) => {
                 </div>
             </div>
             <div className="item profitBar">
-            {stockData.proffits.map((profit) => <stockProffitDisplay profit={profit}/>)}
+            {keys.map((profit) => <stockProffitDisplay profit={profit}/>)}
             </div>
             <div className="item footer"></div>
         </div>
