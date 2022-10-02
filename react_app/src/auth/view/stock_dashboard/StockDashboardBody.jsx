@@ -1,6 +1,24 @@
 import '../auth/Auth.css'
+import "./stockHeader.css"
+import "./StockDashboardBody.css"
 
-const StockDashboardBody = (stockData)=>{
+const StockDashboardBody = ({ stockData }) => {
+    return (
+        <div className="stockDashboardBody">
+            <div className="item stockHeader">
+                <img src={"/api_res/stocks/image/" + stockData.id}></img>
+                <div className="headerDetails">
+                    <h1>{stockData.id}</h1>
+                    <h2>{stockData.stockName}</h2>
+                    <h3>{stockData.setor}</h3>
+
+
+                </div>
+            </div>
+            <div className="item profitBar"></div>
+            <div className="item footer"></div>
+        </div>
+    );
 
 }
 

@@ -1,13 +1,26 @@
 import '../auth/Auth.css'
 import StocksPriceList from './StocksPriceList';
 import SearchBar from './SearchBar';
+import StockDashboardBody from '../stock_dashboard/StockDashboardBody';
 import { useState, useEffect } from 'react'
 import { returnMainDashStocksInfoList } from '../../domain/mainDashboardFunctions';
 
 const MainDashboardBody = () => {
+    const dummyStock = {
+        id:"UGPA3",
+        stockName: "ULTRAPAR",
+        setor :"Petróleo e gás",
+        price: 11.78,
+        relevance:null,
+        lucros:{"2022":1000000000,"2021":500000000,"2020":-500000000},
+        monthVariation:"+30",
+        weekVariation:null,
+        yearVariation: "-100"
+    }
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
-    const [queriedStocks,setQueriedStocks]=useState([])
+    const [queriedStocks,setQueriedStocks]=useState([]);
+    const [displayedStock,setDisplayedStock]=useState(dummyStock)
     useEffect(() => {
         async function fetch() {
             const response = await returnMainDashStocksInfoList()
@@ -18,6 +31,9 @@ const MainDashboardBody = () => {
         }
         fetch();
 
+    }, []);
+    useEffect(() => {
+        setDisplayedStock(dummyStock);
     }, []);
     useEffect(() => {
         if (searchQuery !== null) {
@@ -45,6 +61,11 @@ const MainDashboardBody = () => {
                 <div className="item sideBar">
                     <div>
                         <StocksPriceList stocks={queriedStocks} />
+                    </div>
+                </div>
+                <div className="item mainDash">
+                    <div>
+                        <StockDashboardBody stockData ={displayedStock}/>
                     </div>
                 </div>
             </section>

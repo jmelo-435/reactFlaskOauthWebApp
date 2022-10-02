@@ -1,0 +1,38 @@
+.stockHeader{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin:1rem;
+    display: flex;
+    flex-direction:row
+}
+.nameDisplay{
+    display: flex;
+    flex-direction: row;
+}
+.stockHeader h1{
+    color: #607D8B;
+    margin: 0px;
+    font-size: 34px;
+
+}
+.stockHeader h2{
+    color: #607D8B;
+    margin: 0px;
+    font-size: 17px;
+
+}
+.stockHeader h3{
+    margin: 0px;
+    font-size: 17px;
+
+}
+.stockHeader img{
+    width: 160px;
+    height: 80px;
+    margin-right: 0.5rem;
+    }
+.headerDetails{
+    display: flex;
+    flex-direction: column;
+}
