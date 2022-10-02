@@ -19,7 +19,7 @@ const StockDashboardBody = ({ stockData }) => {
             </div>
             <div className="item profitBar">
                 {Object.entries(stockData.proffits).map(([key, value]) => 
-    <StockProffitDisplay profit={key}/>
+    <StockProffitDisplay year={key} profit={value}/>
 )}
             </div>
             <div className="item footer"></div>
