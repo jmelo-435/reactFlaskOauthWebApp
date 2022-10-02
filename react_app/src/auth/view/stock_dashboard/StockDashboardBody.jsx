@@ -1,7 +1,7 @@
 import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
-import {stockProffitDisplay}from "./StockProffitDisplay.jsx"
+import StockProffitDisplay from "./StockProffitDisplay.jsx"
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
@@ -15,12 +15,12 @@ const StockDashboardBody = ({ stockData }) => {
                     <h1>{stockData.id}</h1>
                     <h2>{stockData.stockName}</h2>
                     <h3>{stockData.setor}</h3>
-                    {keys.map((profit) => <stockProffitDisplay profit={profit}/>)}
+                    {keys.map((profit) => <StockProffitDisplay profit={profit}/>)}
 
                 </div>
             </div>
             <div className="item profitBar">
-            {profits.map((profit) => <stockProffitDisplay profit={profit}/>)}
+            {profits.map((profit) => <StockProffitDisplay profit={profit}/>)}
             </div>
             <div className="item footer"></div>
         </div>
