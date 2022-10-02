@@ -18,6 +18,8 @@
     width: 20vw;
     height: 80vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 
 }
 .footer {
