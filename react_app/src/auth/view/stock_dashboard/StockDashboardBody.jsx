@@ -13,7 +13,7 @@ const StockDashboardBody = ({ stockData }) => {
                     <h1>{stockData.id}</h1>
                     <h2>{stockData.stockName}</h2>
                     <h3>{stockData.setor}</h3>
-
+                    {keys.map((profit) => <stockProffitDisplay profit={profit}/>)}
 
                 </div>
             </div>
