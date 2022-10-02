@@ -5,7 +5,6 @@ import StockProffitDisplay from "./StockProffitDisplay.jsx"
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
-    const [profits,setProffits]=useState(keys)
 
     return (
         <div className="stockDashboardBody">
