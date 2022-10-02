@@ -1,6 +1,7 @@
 import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
+import {stockProffitDisplay}from "./StockProffitDisplay.jsx"
 
 const StockDashboardBody = ({ stockData }) => {
     return (
@@ -15,7 +16,9 @@ const StockDashboardBody = ({ stockData }) => {
 
                 </div>
             </div>
-            <div className="item profitBar"></div>
+            <div className="item profitBar">
+            {stockData.proffits.map((profit) => <stockProffitDisplay profit={profit}/>)}
+            </div>
             <div className="item footer"></div>
         </div>
     );

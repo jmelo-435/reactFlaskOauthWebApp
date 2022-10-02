@@ -12,7 +12,7 @@ const MainDashboardBody = () => {
         setor :"Petróleo e gás",
         price: 11.78,
         relevance:null,
-        lucros:{"2022":1000000000,"2021":500000000,"2020":-500000000},
+        proffits:{"2022":1000000000,"2021":500000000,"2020":-500000000},
         monthVariation:"+30",
         weekVariation:null,
         yearVariation: "-100"
