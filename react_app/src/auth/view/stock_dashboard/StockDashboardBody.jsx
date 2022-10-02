@@ -2,9 +2,11 @@ import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
 import {stockProffitDisplay}from "./StockProffitDisplay.jsx"
+import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
     const keys = Object.keys(stockData.proffits)
+    const [profits,setProffits]=useState(keys)
     return (
         <div className="stockDashboardBody">
             <div className="item stockHeader">
@@ -18,7 +20,7 @@ const StockDashboardBody = ({ stockData }) => {
                 </div>
             </div>
             <div className="item profitBar">
-            {keys.map((profit) => <stockProffitDisplay profit={profit}/>)}
+            {profits.map((profit) => <stockProffitDisplay profit={profit}/>)}
             </div>
             <div className="item footer"></div>
         </div>
