@@ -1,3 +1,8 @@
 .stockProffitDisplay h6{
     color: white;
 }
+
+.stockProffitDisplay {
+    display: flex;
+    flex-direction: row;
+}
