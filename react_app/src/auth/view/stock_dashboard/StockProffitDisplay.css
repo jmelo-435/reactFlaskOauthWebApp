@@ -5,8 +5,6 @@
     color: white;
     padding: 0;
     margin: 0;
-    opacity: 1;
-
 }
 
 .stockProffitDisplay {
@@ -14,8 +12,7 @@
     flex-direction: column;
     padding:0.5rem;
     margin: 0.5rem;
-    background-color: #607D8B;
-    opacity: 0.4;
+    background-color: rgba(96, 125, 139,.4);
     border-radius: 0.2rem;
     justify-content: space-between;
     width: 150px;
@@ -25,27 +22,18 @@
 .posProffitDisplay{
     color: rgb(15, 223, 15);
     align-self: flex-end;
-    opacity: 1;
-
     }
 .negProffitDisplay{
-    opacity: 1;
     color:crimson;
     align-self: flex-end;
     }
 .bigProffitDisplay{
     font-size: 60px;
-    opacity: 1;
-
     }
 .smallProffitDisplay{
     font-size: 40px;
-    opacity: 1;
-
     }
 .posProffitDisplay h6,.negProffitDisplay h6{
     margin: 0;
     margin-top: 0.5rem;
-    opacity: 1;
-
     }
