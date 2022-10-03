@@ -1,6 +1,6 @@
 .stockProffitDisplay h1{
     color: white;
-    justify-self: flex-start;
+    padding: 0;
 }
 
 .stockProffitDisplay {
