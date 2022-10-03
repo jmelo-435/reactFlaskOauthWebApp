@@ -15,13 +15,16 @@
     background-color: #607D8B;
     border-radius: 0.2rem;
     justify-content: space-between;
+
 }
 
 .posProffitDisplay{
     color: rgb(15, 223, 15);
+    align-self: flex-end;
     }
 .negProffitDisplay{
     color:crimson;
+    align-self: flex-end;
     }
 .bigProffitDisplay{
     font-size: 30px;
