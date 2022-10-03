@@ -9,7 +9,19 @@
 .stockProffitDisplay {
     display: flex;
     flex-direction: column;
-    padding:0.5em;
-    margin: 0.5em;
+    padding:0.5rem;
+    margin: 0.5rem;
     background-color: #607D8B;
+    border-radius: 0.2rem;
 }
+
+.posProffitDisplay{
+    color: rgb(15, 223, 15);
+    }
+.negProffitDisplay{
+    color:crimson;
+    }
+.posProffitDisplay h6,.negProffitDisplay h6{
+    margin: 0;
+    font-size: 10px;
+    }
