@@ -27,10 +27,10 @@
     align-self: flex-end;
     }
 .bigProffitDisplay{
-    font-size: 30px;
+    font-size: 60px;
     }
 .smallProffitDisplay{
-    font-size: 20px;
+    font-size: 40px;
     }
 .posProffitDisplay h6,.negProffitDisplay h6{
     margin: 0;
