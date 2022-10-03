@@ -2,7 +2,14 @@
     color: white;
 }
 
+.stockProffitDisplay h1{
+    color: #263238;
+}
+
 .stockProffitDisplay {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding:0.5em;
+    margin: 0.5em;
+    background-color: #607D8B;
 }
