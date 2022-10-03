@@ -1,4 +1,7 @@
 .stockProffitDisplay h1{
+    margin: 0;
+    font-size: 20px;
+    margin-top: 0.5rem;
     color: white;
     padding: 0;
     margin: 0;
@@ -22,5 +25,6 @@
     }
 .posProffitDisplay h6,.negProffitDisplay h6{
     margin: 0;
-    font-size: 20px;
+    font-size: 30px;
+    margin-top: 0.5rem;
     }
