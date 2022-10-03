@@ -13,16 +13,20 @@
     height: fit-content;
     padding: 1rem;
 }
+.proffitBarHeader h1{
+    padding: 0;
+    margin: 0;
+}
 
 .stockProffitDisplay {
     display: flex;
     flex-direction: column;
     padding:0.5rem;
     margin: 0.5rem;
+    margin-top: 0;
     background-color: rgba(96, 125, 139,.2);
     border-radius: 0.2rem;
     justify-content: space-between;
-    width: 150px;
 
 }
 
