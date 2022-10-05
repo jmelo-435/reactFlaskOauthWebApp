@@ -2,7 +2,7 @@ from flask import Flask, jsonify, make_response, request,send_from_directory
 from ..database import get_db
 import os
 from ..verify_api_key import compare_keys
-from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance
+from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance, return_stock_data
 from .security_decorators import valid_api_key_required
 
 db = get_db()
@@ -32,6 +32,20 @@ def get_stock():
     except IndexError:
         return make_response({"msg": "Ativo não encontrado.","success": False}), 500
 
+@valid_api_key_required
+def get_stock_data(id):
+    
+    
+        data = return_stock_data(id=id)
+        price =data['realtime']['value']
+        name = data['name']
+        relevance =data['relevance']
+        setor = data['setor']
+        subSetor = data['subSetor']
+        segmento = data['segmento']
+        return make_response({"value":price, "ativo": id,"name":name,"relevance":relevance,"setor":setor,"subSetor":subSetor,"segmento":segmento, "success": True})
+
+
 
 @valid_api_key_required
 def get_stocks_list():
@@ -43,11 +57,11 @@ def get_stocks_list():
 
 @valid_api_key_required
 def get_stocks_list_days_ago(days):
-    #try:
+    try:
         stock_list = return_stock_prices_days_ago(days)
         return jsonify({"list": stock_list,"success": True})
-    #except :
-     #   return make_response({"msg": "Algo deu errado.","success": False}), 500
+    except :
+        return make_response({"msg": "Algo deu errado.","success": False}), 500
     
 @valid_api_key_required
 def update_relevance():

@@ -68,6 +68,12 @@ def return_stocks_list():
     stocks_list = [stock for stock in stocks]
     return stocks_list
 
+def return_stock_data(id):
+    stocks = db.balance.find(
+        {"_id":id}, {"realtime.value": 1, "name": 1, "relevance": 1,"setor":1,"subSetor":1,"segmento":1})
+    stocks_list = [stock for stock in stocks]
+    return stocks_list
+
 
 def update_stocks_relevance():
     one_week_ago = datetime.date.today() - datetime.timedelta(days=7)
