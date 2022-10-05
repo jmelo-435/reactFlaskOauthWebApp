@@ -41,9 +41,9 @@ def get_stock_data(id):
         name = data.get('name')
         relevance =data.get('relevance')
         setor = data.get('setor')
-        subSetor = data.get('subSetor')
+        sub_setor = data.get('subSetor')
         segmento = data.get('segmento')
-        return make_response({"value":price, "ativo": id,"name":name,"relevance":relevance,"setor":setor,"subSetor":subSetor,"segmento":segmento, "success": True})
+        return make_response({"value":price, "ativo": id,"name":name,"relevance":relevance,"setor":setor,"subSetor":sub_setor,"segmento":segmento, "success": True})
 
 
 
