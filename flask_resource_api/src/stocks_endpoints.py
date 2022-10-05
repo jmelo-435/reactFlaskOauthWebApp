@@ -37,7 +37,7 @@ def get_stock_data(id):
     
     
         data = return_stock_data(id=id)[0]
-        price =data.get('raltime').get('value')
+        price =data.get('realtime').get('value')
         name = data['name']
         relevance =data['relevance']
         setor = data['setor']
