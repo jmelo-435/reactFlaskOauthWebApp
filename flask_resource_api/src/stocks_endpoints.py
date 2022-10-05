@@ -36,7 +36,7 @@ def get_stock():
 def get_stock_data(id):
     
     
-        data = return_stock_data(id=id)
+        data = return_stock_data(id=id)[0]
         price =data['realtime']['value']
         name = data['name']
         relevance =data['relevance']
