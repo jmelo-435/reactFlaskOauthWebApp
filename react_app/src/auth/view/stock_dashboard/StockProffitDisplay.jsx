@@ -1,5 +1,6 @@
 import "./StockProffitDisplay.css"
 const StockProffitDisplay=({year,profit})=>{
+    profit = String(profit).replace(".","")
     return(
         <div className="stockProffitDisplay">
         <h1>{year}</h1>
