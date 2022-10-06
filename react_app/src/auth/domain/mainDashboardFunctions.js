@@ -85,7 +85,7 @@ export async function returnSelectedStockData(id){
         console.log(receivedLucro)
 
         if (receivedLucro!=null){
-            lucros.strYear = receivedLucro
+            lucros[strYear] = receivedLucro
         } 
         year = year+1
     }
