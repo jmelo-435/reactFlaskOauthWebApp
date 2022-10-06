@@ -83,7 +83,7 @@ const ResEndpoints = Object.freeze({
     }
   
     const params = new AuthApiRequestParameters(
-      ResEndpoints.ApiStocksListDaysAgo+String(id),
+      ResEndpoints.ApiStockData+String(id),
       "{}",
       Methods.GET
     );
