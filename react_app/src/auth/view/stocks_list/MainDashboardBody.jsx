@@ -3,7 +3,7 @@ import StocksPriceList from './StocksPriceList';
 import SearchBar from './SearchBar';
 import StockDashboardBody from '../stock_dashboard/StockDashboardBody';
 import { useState, useEffect } from 'react'
-import { returnMainDashStocksInfoList } from '../../domain/mainDashboardFunctions';
+import { returnMainDashStocksInfoList, returnSelectedStockData } from '../../domain/mainDashboardFunctions';
 
 const MainDashboardBody = () => {
     const dummyStock = {
@@ -20,7 +20,7 @@ const MainDashboardBody = () => {
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
-    const [displayedStock,setDisplayedStock]=useState(dummyStock)
+    const [displayedStock,setDisplayedStock]=useState(returnSelectedStockData('UGPA3'))
     useEffect(() => {
         async function fetch() {
             const response = await returnMainDashStocksInfoList()

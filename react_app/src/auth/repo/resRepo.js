@@ -5,7 +5,8 @@ const apiKey = "_zUYQ83k!x34%nh(";
 const ResEndpoints = Object.freeze({
     Api: "/api_res",
     ApiStocksList: "/api_res/stocks/list",
-    ApiStocksListDaysAgo:"/api_res/stocks/"
+    ApiStocksListDaysAgo:"/api_res/stocks/",
+    ApiStockData:"/api_res/stock/"
   });
 
   const Methods = Object.freeze({
@@ -70,4 +71,22 @@ const ResEndpoints = Object.freeze({
     );
     const response = await getResApiResponse(params, token);
     return new GetStoksListOneYearAgoResponse(response);
+  }
+
+  export async function getStockData(id) {
+    class GetStockData {
+      constructor(res) {
+        this.sucess = res.sucess;
+        this.data = res.balance;
+        return this;
+      }
+    }
+  
+    const params = new AuthApiRequestParameters(
+      ResEndpoints.ApiStocksListDaysAgo+String(id),
+      "{}",
+      Methods.GET
+    );
+    const response = await getResApiResponse(params);
+    return new GetStockData(response);
   }

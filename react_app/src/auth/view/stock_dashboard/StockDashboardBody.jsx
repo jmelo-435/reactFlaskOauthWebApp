@@ -2,6 +2,7 @@ import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
 import StockProffitDisplay from "./StockProffitDisplay.jsx"
+
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {

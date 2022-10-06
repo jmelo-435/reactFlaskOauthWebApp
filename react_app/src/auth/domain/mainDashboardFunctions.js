@@ -1,4 +1,4 @@
-import { getStocksList, getStocksListDaysAgo } from '../repo/resRepo'
+import { getStocksList, getStocksListDaysAgo,getStockData } from '../repo/resRepo'
 
 function returnPercentage(price, laterPrice) {
     const variation = price / laterPrice
@@ -61,4 +61,37 @@ export async function returnMainDashStocksInfoList() {
 
     return stocksDataList
 
+}
+
+export async function returnSelectedStockData(id){
+ const data = await getStockData(id)
+ const selectedStockData = {
+    id:"",
+    name:"",
+    price:null,
+    relevance:null,
+    lucros:{},
+    monthVariation:null,
+    weekVariation:null,
+    yearVariation: null
+ }
+ function returnLucrosObject(data){
+    const lucros = {}
+    const year = 2000
+    while (year<2060){
+        const strYear= String(year)
+        const receivedLucro = data.strYear["Lucro líquido"] ?? null
+
+        if (receivedLucro!=null){
+            lucros.strYear = receivedLucro
+        } 
+    }
+    return lucros
+ }
+ selectedStockData.id=data.data._id
+ selectedStockData.name=data.data.name ?? null
+ selectedStockData.price = data.data.realtime.value
+ selectedStockData.relevance = data.relevance ?? null
+ selectedStockData.lucros = returnLucrosObject(data)
+ return selectedStockData
 }
