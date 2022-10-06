@@ -13,7 +13,7 @@ const StockDashboardBody = ({ stockData }) => {
                 <img src={"/api_res/stocks/image/" + stockData.id}></img>
                 <div className="headerDetails">
                     <h1>{stockData.id}</h1>
-                    <h2>{stockData.stockName}</h2>
+                    <h2>{stockData.name}</h2>
                     <h3>{stockData.setor}</h3>
 
                 </div>
