@@ -96,6 +96,6 @@ export async function returnSelectedStockData(id){
  selectedStockData.price = data.data.realtime.value
  selectedStockData.setor=data.data.setor
  selectedStockData.relevance = data.relevance ?? null
- selectedStockData.proffits = returnLucrosObject(data)
+ selectedStockData.proffits = returnLucrosObject(data.data)
  return selectedStockData
 }
