@@ -70,7 +70,7 @@ export async function returnSelectedStockData(id){
     name:"",
     price:null,
     relevance:null,
-    lucros:{},
+    proffits:{},
     monthVariation:null,
     weekVariation:null,
     yearVariation: null
@@ -93,6 +93,6 @@ export async function returnSelectedStockData(id){
  selectedStockData.name=data.data.name ?? null
  selectedStockData.price = data.data.realtime.value
  selectedStockData.relevance = data.relevance ?? null
- selectedStockData.lucros = returnLucrosObject(data)
+ selectedStockData.proffits = returnLucrosObject(data)
  return selectedStockData
 }
