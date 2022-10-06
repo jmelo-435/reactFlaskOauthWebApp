@@ -77,7 +77,7 @@ export async function returnSelectedStockData(id){
  }
  function returnLucrosObject(data){
     const lucros = {}
-    const year = 2000
+    const year = 1990
     while (year<2060){
         const strYear= String(year)
         const receivedLucro = data.strYear["Lucro líquido"] ?? null
@@ -85,6 +85,7 @@ export async function returnSelectedStockData(id){
         if (receivedLucro!=null){
             lucros.strYear = receivedLucro
         } 
+        year = year+1
     }
     return lucros
  }
