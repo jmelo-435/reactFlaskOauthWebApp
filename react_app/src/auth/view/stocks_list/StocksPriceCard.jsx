@@ -1,6 +1,7 @@
 import './StockPriceCard.css'
 import VariationDisplay from './VariationDisplay'
 const StockPriceCard = ({ stock, id, selectStock }) => {
+   
     return (
         <div className="stockPriceCard" 
         onClick={(e) => selectStock(stock.id)} id={id}>

@@ -10,6 +10,7 @@ const MainDashboardBody = () => {
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
+    const [selectedStock,setSelectedStock]=useState(["PETR3"]); 
     const [displayedStock,setDisplayedStock]=useState( {
         id:"",
         name:"",
@@ -34,13 +35,13 @@ const MainDashboardBody = () => {
     }, []);
     useEffect(() => {
         async function fetch(){
-            const dummyStock = await returnSelectedStockData('PETR3')
+            const dummyStock = await returnSelectedStockData(selectedStock)
             console.log(dummyStock)
             setDisplayedStock(dummyStock);
         }
         fetch()
 
-    }, []);
+    }, [selectedStock]);
     useEffect(() => {
         if (searchQuery !== null) {
             let filtered = [];
@@ -66,7 +67,7 @@ const MainDashboardBody = () => {
             
                 <div className="item sideBar">
                     <div>
-                        <StocksPriceList stocks={queriedStocks} selectStock={setDisplayedStock} />
+                        <StocksPriceList stocks={queriedStocks} selectStock={setSelectedStock} />
                     </div>
                 </div>
                 <div className="item mainDash">
