@@ -10,7 +10,17 @@ const MainDashboardBody = () => {
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
-    const [displayedStock,setDisplayedStock]=useState([])
+    const [displayedStock,setDisplayedStock]=useState( {
+        id:"",
+        name:"",
+        price:null,
+        relevance:null,
+        setor:null,
+        proffits:{},
+        monthVariation:null,
+        weekVariation:null,
+        yearVariation: null
+     })
     useEffect(() => {
         async function fetch() {
             const response = await returnMainDashStocksInfoList()
