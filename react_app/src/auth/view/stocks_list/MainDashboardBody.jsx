@@ -34,7 +34,7 @@ const MainDashboardBody = () => {
     }, []);
     useEffect(() => {
         async function fetch(){
-            const dummyStock = await returnSelectedStockData('UGPA3')
+            const dummyStock = await returnSelectedStockData('CVCB3')
             console.log(dummyStock)
             setDisplayedStock(dummyStock);
         }
