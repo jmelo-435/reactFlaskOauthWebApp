@@ -8,7 +8,7 @@ const StockProffitDisplay=({year,profit})=>{
         <div className = {Math.sign(parseInt(profit))*parseInt(profit)>=1000 ? "bigProffitDisplay" : "smallProffitDisplay"}>
             {
             Math.sign(parseInt(profit))*parseInt(profit)>=1000?
-            <span><h6>{Math.round(parseInt(profit)/10)/10} bi</h6></span>
+            <span><h6>{Math.round(parseInt(profit)/10)/100} bi</h6></span>
             :
             <span><h6>{profit}mi</h6></span>
             
