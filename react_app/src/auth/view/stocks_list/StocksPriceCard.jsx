@@ -1,8 +1,9 @@
 import './StockPriceCard.css'
 import VariationDisplay from './VariationDisplay'
-const StockPriceCard = ({ stock, id }) => {
+const StockPriceCard = ({ stock, id, selectStock }) => {
     return (
-        <div className="stockPriceCard" id={id}>
+        <div className="stockPriceCard" 
+        onClick={(e) => selectStock(stock.id)} id={id}>
             <div className="topoCard">
                 <div className="mainTopoDisplay">
                     <img src={"/api_res/stocks/image/" + stock.id}></img>

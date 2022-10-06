@@ -5,13 +5,13 @@ import { returnMainDashStocksInfoList } from '../../domain/mainDashboardFunction
 
 
 
-const StocksPriceList = ({stocks}) => {
+const StocksPriceList = ({stocks,selectStock}) => {
 
     
 
     return (
         <div className="stocksPriceList">
-            {stocks.map((stock) => <StockPriceCard stock={stock}/>)}
+            {stocks.map((stock) => <StockPriceCard stock={stock} selectStock = {selectStock}/>)}
         </div>
     );
 }

@@ -66,7 +66,7 @@ const MainDashboardBody = () => {
             
                 <div className="item sideBar">
                     <div>
-                        <StocksPriceList stocks={queriedStocks} />
+                        <StocksPriceList stocks={queriedStocks} selectStock={setDisplayedStock} />
                     </div>
                 </div>
                 <div className="item mainDash">
