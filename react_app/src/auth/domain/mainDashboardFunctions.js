@@ -82,6 +82,7 @@ export async function returnSelectedStockData(id){
     while (year<2060){
         const strYear= String(year)
         const receivedLucro = data?.[strYear]?.["Lucro líquido"]
+        console.log(receivedLucro)
 
         if (receivedLucro!=null){
             lucros.strYear = receivedLucro
