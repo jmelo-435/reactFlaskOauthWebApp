@@ -6,21 +6,11 @@ import { useState, useEffect } from 'react'
 import { returnMainDashStocksInfoList, returnSelectedStockData } from '../../domain/mainDashboardFunctions';
 
 const MainDashboardBody = () => {
-    const dummyStock = {
-        id:"UGPA3",
-        stockName: "ULTRAPAR",
-        setor :"Petróleo e gás",
-        price: 11.78,
-        relevance:null,
-        proffits:{"2022":1000000000,"2021":500000000,"2020":-500000000},
-        monthVariation:"+30",
-        weekVariation:null,
-        yearVariation: "-100"
-    }
+    
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
-    const [displayedStock,setDisplayedStock]=useState(returnSelectedStockData('UGPA3'))
+    const [displayedStock,setDisplayedStock]=useState([])
     useEffect(() => {
         async function fetch() {
             const response = await returnMainDashStocksInfoList()
@@ -33,7 +23,13 @@ const MainDashboardBody = () => {
 
     }, []);
     useEffect(() => {
-        setDisplayedStock(dummyStock);
+        async function fetch(){
+            const dummyStock = await returnMainDashStocksInfoList('UGPA3')
+            console.log(dummyStock)
+            setDisplayedStock(dummyStock);
+        }
+        fetch()
+
     }, []);
     useEffect(() => {
         if (searchQuery !== null) {

@@ -94,6 +94,5 @@ export async function returnSelectedStockData(id){
  selectedStockData.price = data.data.realtime.value
  selectedStockData.relevance = data.relevance ?? null
  selectedStockData.proffits = returnLucrosObject(data)
- console.log(selectedStockData)
  return selectedStockData
 }
