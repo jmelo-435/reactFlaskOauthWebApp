@@ -15,7 +15,7 @@ const Chart =({id})=>{
     return(
         <div>
             
-  <LineChart width={600} height={300} data={data}>
+  <LineChart width={600} height={300} data={chartData}>
     <Line type="monotone" dataKey="close" stroke="#8884d8" />
     <CartesianGrid stroke="#ccc" />
     <XAxis dataKey="date" />
