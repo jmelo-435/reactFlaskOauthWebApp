@@ -132,6 +132,6 @@ export async function returnStockDashboardChartData(id){
             }
         })
       })
- return priceData.data
+ console.log(priceData.data)
 
 }
