@@ -11,7 +11,7 @@ const StockDashboardBody = ({ stockData }) => {
     const [chartData, setChartData] = useState({stockData})
     useEffect(() => {
         async function run(){
-            const newData = await returnStockDashboardChartData(stock.id)
+            const newData = await returnStockDashboardChartData(stockData.id)
             setChartData(newData)
         }
         run()
