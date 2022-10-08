@@ -7,8 +7,12 @@ import { returnStockDashboardChartData } from '../../domain/mainDashboardFunctio
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
+    const [data, setData] = useState(null)
     useEffect(() => {
-      returnStockDashboardChartData('UGPA3')
+        console.log(data)
+        }, [data]);
+    useEffect(() => {
+      setData(returnStockDashboardChartData('UGPA3'))
       }, []);
 
     return (
