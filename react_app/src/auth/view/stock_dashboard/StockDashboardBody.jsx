@@ -8,7 +8,7 @@ import { returnStockDashboardChartData } from '../../domain/mainDashboardFunctio
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
-    const [chartData, setChartData] = useState()
+    const [chartData, setChartData] = useState({stockData})
     useEffect(() => {
         async function run(){
             const newData = await returnStockDashboardChartData(stock.id)
