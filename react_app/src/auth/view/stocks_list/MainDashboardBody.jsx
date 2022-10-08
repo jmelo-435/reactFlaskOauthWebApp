@@ -12,7 +12,7 @@ const MainDashboardBody = () => {
     const [queriedStocks,setQueriedStocks]=useState([]);
     const [selectedStock,setSelectedStock]=useState(["PETR3"]); 
     const [displayedStock,setDisplayedStock]=useState( {
-        id:"",
+        id:"PETR4",
         name:"",
         price:null,
         relevance:null,
