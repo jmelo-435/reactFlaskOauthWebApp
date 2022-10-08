@@ -12,7 +12,11 @@ const StockDashboardBody = ({ stockData }) => {
         console.log(data)
         }, [data]);
     useEffect(() => {
-      setData(returnStockDashboardChartData('UGPA3'))
+        async function run(){
+            setData(await returnStockDashboardChartData('UGPA3'))
+
+        }
+        run()
       }, []);
 
     return (
