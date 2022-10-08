@@ -1,4 +1,4 @@
-import { getStocksList, getStocksListDaysAgo,getStockData } from '../repo/resRepo'
+import { getStocksList, getStocksListDaysAgo,getStockData,getStockChartData } from '../repo/resRepo'
 
 function returnPercentage(price, laterPrice) {
     const variation = price / laterPrice
@@ -98,4 +98,9 @@ export async function returnSelectedStockData(id){
  selectedStockData.relevance = data.relevance ?? null
  selectedStockData.proffits = returnLucrosObject(data.data)
  return selectedStockData
+}
+
+export async function returnStockDashboardChartData(id){
+    const priceData = getStockChartData(id)
+    console.log(priceData)
 }

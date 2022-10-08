@@ -6,7 +6,8 @@ const ResEndpoints = Object.freeze({
     Api: "/api_res",
     ApiStocksList: "/api_res/stocks/list",
     ApiStocksListDaysAgo:"/api_res/stocks/",
-    ApiStockData:"/api_res/stock/"
+    ApiStockData:"/api_res/stock/",
+    ApiStockChartData:"/api_res/stock/graph/"
   });
 
   const Methods = Object.freeze({
@@ -89,4 +90,22 @@ const ResEndpoints = Object.freeze({
     );
     const response = await getResApiResponse(params);
     return new GetStockData(response);
+  }
+
+  export async function getStockChartData(id) {
+    class GetStockChartData {
+      constructor(res) {
+        this.sucess = res.sucess;
+        this.data = res.graphData;
+        return this;
+      }
+    }
+  
+    const params = new AuthApiRequestParameters(
+      ResEndpoints.ApiStockChartData+String(id),
+      "{}",
+      Methods.GET
+    );
+    const response = await getResApiResponse(params);
+    return new GetStockChartData(response);
   }
