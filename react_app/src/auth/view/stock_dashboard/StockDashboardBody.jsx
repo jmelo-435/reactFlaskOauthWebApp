@@ -28,7 +28,7 @@ const StockDashboardBody = ({ stockData }) => {
 
                 </div>
             </div>
-            <h6>{data}</h6>
+            <h6>{String(data)}</h6>
             <div className="item profitBar">
                 <div className='proffitBarHeader'>
                     <h1>Lucro líquido anual:</h1>
