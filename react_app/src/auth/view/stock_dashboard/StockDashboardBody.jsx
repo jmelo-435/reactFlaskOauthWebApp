@@ -2,15 +2,17 @@ import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
 import StockProffitDisplay from "./StockProffitDisplay.jsx"
+import Chart from './Chart.jsx'
 import { returnStockDashboardChartData } from '../../domain/mainDashboardFunctions'
 
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
-    const [data, setData] = useState()
+    const [chartData, setChartData] = useState()
     useEffect(() => {
         async function run(){
-            returnStockDashboardChartData(stockData.id)
+            const newData = await returnStockDashboardChartData(stock.id)
+            setChartData(newData)
         }
         run()
       }, []);
@@ -26,6 +28,7 @@ const StockDashboardBody = ({ stockData }) => {
 
                 </div>
             </div>
+            <Chart data= {chartData}/>
             <div className="item profitBar">
                 <div className='proffitBarHeader'>
                     <h1>Lucro líquido anual:</h1>
