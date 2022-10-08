@@ -67,15 +67,15 @@ def update_relevance():
     
 @valid_api_key_required
 def get_stock_graph_data(id):
-    
+        s = set()
         graph_data =return_stock_graph_data(id)
         for element in graph_data[0]['historical']:
             try:
                 element['close']=float(element['close'])
             except:
                 element['close']= None
-        graph_data[0]['historical'] = set(list(graph_data[0]['historical']))
-        return jsonify({"success": True, "graphData":graph_data})
+            s.add(element)
+        return jsonify({"success": True, "graphData":s})
 
 @valid_api_key_required
 def update_historical_close():
