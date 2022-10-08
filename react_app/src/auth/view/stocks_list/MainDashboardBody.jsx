@@ -10,7 +10,17 @@ const MainDashboardBody = () => {
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
-    const [selectedStock,setSelectedStock]=useState(["PETR3"]); 
+    const [selectedStock,setSelectedStock]=useState({
+        id:"PETR4",
+        name:"",
+        price:null,
+        relevance:null,
+        setor:null,
+        proffits:{},
+        monthVariation:null,
+        weekVariation:null,
+        yearVariation: null
+     }); 
     const [displayedStock,setDisplayedStock]=useState( {
         id:"PETR4",
         name:"",
@@ -36,7 +46,6 @@ const MainDashboardBody = () => {
     useEffect(() => {
         async function fetch(){
             const dummyStock = await returnSelectedStockData(selectedStock)
-            console.log(dummyStock)
             setDisplayedStock(dummyStock);
         }
         fetch()
