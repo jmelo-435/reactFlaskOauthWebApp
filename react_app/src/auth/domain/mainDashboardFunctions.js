@@ -123,6 +123,6 @@ export async function returnStockDashboardChartData(id){
         return lucros
      }
      const lucrosList = returnLucrosObject(data.data)
-    return lucrosList
+    return priceData
 
 }
