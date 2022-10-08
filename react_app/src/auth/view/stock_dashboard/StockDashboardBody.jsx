@@ -7,10 +7,11 @@ import { returnStockDashboardChartData } from '../../domain/mainDashboardFunctio
 import { useState, useEffect } from 'react'
 
 const StockDashboardBody = ({ stockData }) => {
-    const [data, setData] = useState({"data":{"date":"data"}})
+    const [data, setData] = useState()
     useEffect(() => {
         async function run(){
-            const data = await returnStockDashboardChartData('UGPA3')
+            const data = await returnStockDashboardChartData(stockData.id)
+            console.log(data)
             setData(data)
 
         }
@@ -28,7 +29,6 @@ const StockDashboardBody = ({ stockData }) => {
 
                 </div>
             </div>
-            <h6>{data.data.date}</h6>
             <div className="item profitBar">
                 <div className='proffitBarHeader'>
                     <h1>Lucro líquido anual:</h1>

@@ -106,7 +106,7 @@ export async function returnStockDashboardChartData(id){
         const lucros = []
         let year = 1990
         while (year<2060){
-            const lucro = {}
+            
             const strYear= String(year)
             const date = new Date(strYear+'-01-01');
 
@@ -114,10 +114,12 @@ export async function returnStockDashboardChartData(id){
             const receivedLucro = data?.[strYear]?.["Lucro líquido"]
     
             if (receivedLucro!=null){
-                lucro[date] = iso
+                const lucro = {}
+                lucro['date'] = iso
                 lucro['lucro']=parseInt(receivedLucro)
+                lucros.push(lucro)
             }
-            lucros.push(lucro)
+            
             year = year+1
         }
         return lucros
