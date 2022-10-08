@@ -100,7 +100,7 @@ export async function returnSelectedStockData(id){
 }
 
 export async function returnStockDashboardChartData(id){
-    const priceData = getStockChartData(id)
+    const priceData =await getStockChartData(id)
     const data = await getStockData(id)
     function returnLucrosObject(data){
         const lucros = []
