@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 const StockDashboardBody = ({ stockData }) => {
     useEffect(() => {
       returnStockDashboardChartData('UGPA3')
-      }, [responseCode]);
+      }, []);
 
     return (
         <div className="stockDashboardBody">
