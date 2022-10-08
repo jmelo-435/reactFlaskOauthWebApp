@@ -74,7 +74,7 @@ def get_stock_graph_data(id):
                 element['close']=float(element['close'])
             except:
                 element['close']= None
-        graph_data = set(graph_data)
+        graph_data[0]['historical'] = set(graph_data[0]['historical'])
         return jsonify({"success": True, "graphData":graph_data})
 
 @valid_api_key_required
