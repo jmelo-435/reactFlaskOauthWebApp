@@ -9,9 +9,6 @@ import { useState, useEffect } from 'react'
 const StockDashboardBody = ({ stockData }) => {
     const [data, setData] = useState(null)
     useEffect(() => {
-        console.log(data)
-        }, [data]);
-    useEffect(() => {
         async function run(){
             const data = await returnStockDashboardChartData('UGPA3')
             setData(data)
@@ -31,6 +28,7 @@ const StockDashboardBody = ({ stockData }) => {
 
                 </div>
             </div>
+            <h6>{data}</h6>
             <div className="item profitBar">
                 <div className='proffitBarHeader'>
                     <h1>Lucro líquido anual:</h1>
