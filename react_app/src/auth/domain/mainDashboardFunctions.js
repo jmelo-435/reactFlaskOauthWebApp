@@ -125,6 +125,13 @@ export async function returnStockDashboardChartData(id){
         return lucros
      }
      const lucrosList = returnLucrosObject(data.data)
- console.log( lucrosList)
+     lucrosList.forEach(function (item, index) {
+        priceData.forEach(function(priceObject){
+            if(item.date==new Date(priceObject.data.date).toISOString()){
+                priceObject['lucro']=item['lucro']
+            }
+        })
+      })
+ console.log( priceData)
 
 }
