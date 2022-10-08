@@ -69,6 +69,11 @@ def update_relevance():
 def get_stock_graph_data(id):
     
         graph_data =return_stock_graph_data(id)
+        for element in graph_data['historical']:
+            try:
+                element['close']=float(element['close'])
+            except:
+                element['close']= None
         return jsonify({"success": True, "graphData":graph_data})
 
 @valid_api_key_required
