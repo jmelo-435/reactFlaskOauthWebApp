@@ -76,7 +76,7 @@ def get_stock_graph_data(id):
                 element['close']= None
             if element not in newlist:
                 newlist.append(element)
-        return jsonify({"success": True, "graphData":newlist})
+        return jsonify({"success": True, "graphData":newlist,"stock":id})
 
 @valid_api_key_required
 def update_historical_close():

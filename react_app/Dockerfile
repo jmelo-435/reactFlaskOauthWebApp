@@ -8,6 +8,8 @@ COPY ./package-lock.json ./
 
 RUN npm install
 
+RUN npm install recharts
+
 COPY . .
 
 EXPOSE 3000
