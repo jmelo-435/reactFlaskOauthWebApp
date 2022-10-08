@@ -93,6 +93,21 @@ def update_stocks_relevance():
             "relevance": index}}, upsert=True)
     return stocks_list
 
+def return_stock_graph_data(id):
+
+
+    stock_graph_data = db.historical.aggregate([
+        {"$match":{"_id":id}},
+        {"$unwind":"$historical"},
+        {"$project":{"date":{"$dateFromString":{"dateString":"$historical.date"}},"close":"$historical.adjClose"}},
+        {"$sort":{"date":1}},
+        {"$group":{"_id":"$_id","historical":{"$push":{"date":"$date","close":"$close"}}}},
+        {"$project":{"historical":{"$filter":{"input":"$historical","as":"item","cond":{"$eq":[{"$dayOfMonth":"$$item.date"},1]}}}}}
+        ])
+
+    graph_data = [stock for stock in stock_graph_data]
+
+    return graph_data
 
 def return_stock_prices_days_ago(days):
     one_year_ago = datetime.date.today() - datetime.timedelta(int(days))

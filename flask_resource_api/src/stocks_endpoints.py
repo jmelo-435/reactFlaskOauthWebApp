@@ -2,7 +2,7 @@ from flask import Flask, jsonify, make_response, request,send_from_directory
 from ..database import get_db
 import os
 from ..verify_api_key import compare_keys
-from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance, return_stock_data
+from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance, return_stock_data,return_stock_graph_data
 from .security_decorators import valid_api_key_required
 
 db = get_db()
@@ -64,6 +64,12 @@ def update_relevance():
         return jsonify({"success": True, "list":list})
     except :
         return make_response({"msg": "Algo deu errado.","success": False}), 500
+    
+@valid_api_key_required
+def get_stock_graph_data(id):
+    
+        graph_data =return_stock_graph_data(id)
+        return jsonify({"success": True, "graphData":graph_data})
 
 @valid_api_key_required
 def update_historical_close():
