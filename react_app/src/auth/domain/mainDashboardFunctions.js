@@ -130,7 +130,7 @@ export async function returnStockDashboardChartData(id){
             if(item.date==new Date(priceObject.date).toISOString()){
                 priceObject['lucro']=item['lucro']
             }
-            priceObject['date'] = new Date(priceObject['date']).toISOString().split('T')[0]
+            priceObject['date'] = new Date(priceObject['date']).toISOString().split('T')[0].substring(0,4)
         })
       })
  return priceData.data
