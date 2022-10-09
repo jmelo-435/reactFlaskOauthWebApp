@@ -12,8 +12,9 @@ const Chart =({chartData})=>{
     <Line type="monotone" dataKey="close" stroke="#8884d8" />
     <Line type="monotone" dataKey="lucro" stroke="black" />
     <CartesianGrid stroke="#ccc" />
+    <Tooltip/>
     <XAxis dataKey="date" />
-    <YAxis />
+    <YAxis dataKey="date"/>
   </LineChart>
 
         </div>

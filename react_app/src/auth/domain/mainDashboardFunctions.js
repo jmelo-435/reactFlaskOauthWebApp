@@ -111,7 +111,8 @@ export async function returnStockDashboardChartData(id){
             const date = new Date(strYear+'-01-01');
 
             const iso = date.toISOString();
-            const receivedLucro = data?.[strYear]?.["Lucro líquido"]
+            let receivedLucro = data?.[strYear]?.["Lucro líquido"]
+            receivedLucro = String(receivedLucro).replace(".","")
     
             if (receivedLucro!=null){
                 const lucro = {}
