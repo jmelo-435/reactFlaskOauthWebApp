@@ -8,7 +8,7 @@ const Chart =({chartData})=>{
     return(
         <div>
             
-  <LineChart width={600} height={300} data={chartData}
+  <AreaChart width={600} height={300} data={chartData}
   margin={{
     top: 10,
     right: 30,
@@ -20,7 +20,7 @@ const Chart =({chartData})=>{
     <Tooltip/>
     <XAxis dataKey="date" />
     <YAxis />
-  </LineChart>
+  </AreaChart>
 
         </div>
     )
