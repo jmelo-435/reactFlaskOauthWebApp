@@ -49,7 +49,7 @@ const MainDashboardBody = () => {
     useEffect(() => {
         async function fetch(){
             const dummyStock = await returnSelectedStockData(selectedStock)
-            const chartData = await returnStockDashboardChartData(selectedStock.id)
+            const chartData = await returnStockDashboardChartData(selectedStock)
             setDisplayedStock(dummyStock);
             setChartData(chartData)
             
