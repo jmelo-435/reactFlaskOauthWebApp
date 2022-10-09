@@ -8,7 +8,7 @@ const Chart =({chartData})=>{
     return(
         <div>
             
-  <AreaChart width={600} height={300} data={chartData}
+  <AreaChart width={600} height={300} syncId="id" data={chartData}
   margin={{
     top: 10,
     right: 30,
@@ -21,7 +21,7 @@ const Chart =({chartData})=>{
     <XAxis dataKey="date" />
     <YAxis />
   </AreaChart>
-  <AreaChart width={600} height={300} data={chartData}
+  <AreaChart width={600} height={300} syncId="id" data={chartData}
   margin={{
     top: 10,
     right: 30,
@@ -30,6 +30,7 @@ const Chart =({chartData})=>{
   }}>
     <Area type="monotone" dataKey="lucro" fill="black" fillOpacity={0.5}/>
     <Tooltip/>
+    <CartesianGrid stroke="#ccc" />
     <XAxis dataKey="date" />
     <YAxis />
   </AreaChart>
