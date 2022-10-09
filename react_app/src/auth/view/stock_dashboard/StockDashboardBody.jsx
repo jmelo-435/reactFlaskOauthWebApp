@@ -5,7 +5,7 @@ import StockProffitDisplay from "./StockProffitDisplay.jsx"
 import Chart from './Chart.jsx'
 
 
-const StockDashboardBody = ({ stockData }) => {
+const StockDashboardBody = ({ stockData,chartData }) => {
 
 
     return (
@@ -19,7 +19,7 @@ const StockDashboardBody = ({ stockData }) => {
 
                 </div>
             </div>
-            <Chart id= {stockData.id}/>
+            <Chart id= {chartData}/>
             <div className="item profitBar">
                 <div className='proffitBarHeader'>
                     <h1>Lucro líquido anual:</h1>

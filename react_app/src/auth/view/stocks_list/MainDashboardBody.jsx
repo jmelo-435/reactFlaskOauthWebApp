@@ -4,12 +4,14 @@ import SearchBar from './SearchBar';
 import StockDashboardBody from '../stock_dashboard/StockDashboardBody';
 import { useState, useEffect } from 'react'
 import { returnMainDashStocksInfoList, returnSelectedStockData } from '../../domain/mainDashboardFunctions';
+import { returnStockDashboardChartData } from '../../domain/mainDashboardFunctions'
 
 const MainDashboardBody = () => {
     
     const [searchQuery, setSearchQuery] = useState(null)
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
+    const [chartData,setChartData]=useState([]);
     const [selectedStock,setSelectedStock]=useState({
         id:"PETR4",
         name:"",
@@ -43,10 +45,14 @@ const MainDashboardBody = () => {
         fetch();
 
     }, []);
+
     useEffect(() => {
         async function fetch(){
             const dummyStock = await returnSelectedStockData(selectedStock)
+            const chartData = await returnStockDashboardChartData(selectedStock.id)
             setDisplayedStock(dummyStock);
+            setChartData(chartData)
+            
         }
         fetch()
 
@@ -81,7 +87,7 @@ const MainDashboardBody = () => {
                 </div>
                 <div className="item mainDash">
                     <div>
-                        <StockDashboardBody stockData ={displayedStock}/>
+                        <StockDashboardBody stockData ={displayedStock} chartData = {chartData}/>
                     </div>
                 </div>
             </section>
