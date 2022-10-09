@@ -14,7 +14,7 @@ const Chart =({chartData})=>{
     <CartesianGrid stroke="#ccc" />
     <Tooltip/>
     <XAxis dataKey="date" />
-    <YAxis dataKey="date"/>
+    <YAxis />
   </LineChart>
 
         </div>
