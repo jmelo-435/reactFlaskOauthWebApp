@@ -117,7 +117,7 @@ export async function returnStockDashboardChartData(id){
             if (receivedLucro!=null){
                 const lucro = {}
                 lucro['date'] = iso
-                lucro['lucro']=parseInt(receivedLucro)
+                lucro['lucro']=parseInt(receivedLucro)/1000
                 lucros.push(lucro)
             }
             
