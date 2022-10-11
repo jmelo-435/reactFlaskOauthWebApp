@@ -27,6 +27,8 @@
     background-color: rgba(96, 125, 139,.2);
     border-radius: 0.2rem;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
