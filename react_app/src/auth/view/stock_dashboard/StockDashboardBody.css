@@ -4,9 +4,8 @@
         "stockHeader stockHeader"
         "profitBar profitBar "
         "mainStats mainStats "
-        "graph profitBar "
+        "mainStats mainStats "
         "footer footer";
-    height: max-content;
     border-radius: 1rem;
     justify-content: space-between;
 
@@ -23,6 +22,7 @@
 
 }
 .mainStats{
+    grid-area: mainStats;
     width:70vw
 
 }
