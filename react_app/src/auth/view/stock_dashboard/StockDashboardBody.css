@@ -15,6 +15,7 @@
     grid-area: profitBar;
     background-color: #263238;
     height: auto;
+    
     overflow-x: auto;
     display: flex;
     border-radius: 0.5rem;
@@ -23,7 +24,7 @@
 }
 .mainStats{
     grid-area: mainStats;
-    width:70vw
+    width:100%
 
 }
 .footer {

@@ -23,11 +23,8 @@ const StockDashboardBody = ({ stockData,chartData }) => {
             <Chart chartData= {chartData}/>
 
             </div>
+            <h1>Lucro líquido anual:</h1>
             <div className="item profitBar">
-                <div className='proffitBarHeader'>
-                    <h1>Lucro líquido anual:</h1>
-
-                </div>
                 {Object.entries(stockData.proffits).map(([key, value]) => 
     <StockProffitDisplay year={key} profit={value}/>
 )}
