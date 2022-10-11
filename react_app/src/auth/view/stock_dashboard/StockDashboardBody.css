@@ -15,7 +15,6 @@
     grid-area: profitBar;
     background-color: #263238;
     width: 70vw;
-    height: 20vh;
     display:flex;
     border-radius: 0.5rem;
     flex-direction: row;
