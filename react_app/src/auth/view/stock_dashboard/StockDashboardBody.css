@@ -22,6 +22,10 @@
     flex-direction: column;
 
 }
+.mainStats{
+    width: 100%;
+
+}
 .footer {
     grid-area: footer;
     background-color: #263238;
