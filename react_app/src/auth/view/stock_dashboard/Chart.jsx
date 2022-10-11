@@ -7,8 +7,8 @@ const Chart =({chartData})=>{
 
     return(
         <div>
-            
-  <AreaChart  syncId="id" data={chartData}
+       <ResponsiveContainer width="95%" height={400}>
+       <AreaChart  syncId="id" data={chartData}
   margin={{
     top: 10,
     right: 30,
@@ -21,19 +21,17 @@ const Chart =({chartData})=>{
     <XAxis dataKey="date" />
     <YAxis />
   </AreaChart>
-  <AreaChart  syncId="id" data={chartData}
-  margin={{
-    top: 10,
-    right: 30,
-    left: 0,
-    bottom: 0,
-  }}>
+        </ResponsiveContainer>
+<ResponsiveContainer width="95%" height={400}>
+  <AreaChart  syncId="id" data={chartData} margin={{top: 10,right: 30,left: 0,bottom: 0,}}>
     <Area type="monotone" dataKey="lucro" fill="black" fillOpacity={0.5}/>
     <Tooltip/>
     <CartesianGrid stroke="#ccc" />
     <XAxis dataKey="date" />
     <YAxis />
   </AreaChart>
+</ResponsiveContainer>     
+
 
         </div>
     )
