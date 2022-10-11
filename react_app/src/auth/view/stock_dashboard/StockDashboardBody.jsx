@@ -19,7 +19,10 @@ const StockDashboardBody = ({ stockData,chartData }) => {
 
                 </div>
             </div>
+            <div className='item mainStats'>
             <Chart chartData= {chartData}/>
+
+            </div>
             <div className="item profitBar">
                 <div className='proffitBarHeader'>
                     <h1>Lucro líquido anual:</h1>
