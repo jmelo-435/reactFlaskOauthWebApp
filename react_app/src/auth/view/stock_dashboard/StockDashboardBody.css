@@ -16,7 +16,6 @@
     grid-area: profitBar;
     background-color: #263238;
     height: 80vh;
-    width: 10vw;
     overflow-y: auto;
     display: flex;
     border-radius: 0.5rem;
