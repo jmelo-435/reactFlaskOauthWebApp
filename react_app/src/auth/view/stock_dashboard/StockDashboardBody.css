@@ -15,8 +15,8 @@
     grid-area: profitBar;
     background-color: #263238;
     height: auto;
-    width: 60vw;
-    height: 15vh;
+    width: 90vw;
+    height: 20vh;
     overflow-x: auto;
     display: flex;
     border-radius: 0.5rem;
