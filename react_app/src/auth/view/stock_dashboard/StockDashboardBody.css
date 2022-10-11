@@ -19,6 +19,7 @@
     display:flex;
     border-radius: 0.5rem;
     flex-direction: row;
+    overflow-y: auto;
 
 }
 .mainStats{
