@@ -14,7 +14,6 @@
 .profitBar {
     grid-area: profitBar;
     background-color: #263238;
-    height: auto;
     width: 70vw;
     height: 20vh;
     overflow-x: auto;
