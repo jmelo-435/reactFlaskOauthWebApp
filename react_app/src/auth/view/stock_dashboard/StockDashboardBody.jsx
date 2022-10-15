@@ -1,6 +1,7 @@
 import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
+import ProffitBar from"./ProffitBar.jsx"
 import StockProffitDisplay from "./StockProffitDisplay.jsx"
 import Chart from './Chart.jsx'
 
@@ -23,12 +24,10 @@ const StockDashboardBody = ({ stockData,chartData }) => {
             <Chart chartData= {chartData}/>
 
             </div>
-            <h1>Lucro líquido anual:</h1>
+            
             <div className="item profitBar">
-           
-                {Object.entries(stockData.proffits).reverse().map(([key, value]) => 
-    <StockProffitDisplay year={key} profit={value}/>
-)}
+           <ProffitBar stockData={stockData}></ProffitBar>
+                
             </div>
             <div className="item footer"></div>
         </div>
