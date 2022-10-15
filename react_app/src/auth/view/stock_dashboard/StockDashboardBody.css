@@ -21,6 +21,11 @@
     overflow-y: auto;
 
 }
+.proffits{
+    display:flex;
+    flex-direction: column;
+    
+}
 .mainStats{
     grid-area: mainStats;
     width:100%

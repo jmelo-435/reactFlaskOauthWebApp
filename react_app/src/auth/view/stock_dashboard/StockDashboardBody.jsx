@@ -24,7 +24,7 @@ const StockDashboardBody = ({ stockData,chartData }) => {
 
             </div>
             
-            <div className="item profitBar">
+            <div className="proffits">
            <ProffitBar stockData={stockData}></ProffitBar>
                 
             </div>
