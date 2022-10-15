@@ -11,7 +11,7 @@
 
 }
 
-.profitBar {
+.proffits{
     grid-area: profitBar;
     background-color: #263238;
     width: 70vw;
@@ -21,10 +21,9 @@
     overflow-y: auto;
 
 }
-.proffits{
+.profitBar{
     display:flex;
     flex-direction: column;
-    
 }
 .mainStats{
     grid-area: mainStats;
