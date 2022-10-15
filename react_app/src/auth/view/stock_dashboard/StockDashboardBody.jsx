@@ -26,7 +26,7 @@ const StockDashboardBody = ({ stockData,chartData }) => {
             <h1>Lucro líquido anual:</h1>
             <div className="item profitBar">
            
-                {Object.entries(stockData.proffits).map(([key, value]) => 
+                {Object.entries(stockData.proffits).reverse().map(([key, value]) => 
     <StockProffitDisplay year={key} profit={value}/>
 )}
             </div>
