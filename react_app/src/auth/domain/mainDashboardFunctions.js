@@ -88,7 +88,7 @@ export async function returnSelectedStockData(id){
         } 
         year = year+1
     }
-    const ordered = Object.keys(lucros).sort().reduce(
+    const ordered = Object.keys(lucros).sort().reverse().reduce(
         (obj, key) => { 
           obj[key] = lucros[key]; 
           return obj;
