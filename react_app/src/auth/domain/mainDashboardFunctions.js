@@ -90,7 +90,7 @@ export async function returnSelectedStockData(id){
     }
     const ordered = Object.keys(lucros).sort().reduce(
         (obj, key) => { 
-          obj[key] = unordered[key]; 
+          obj[key] = lucros[key]; 
           return obj;
         }, 
         {}
