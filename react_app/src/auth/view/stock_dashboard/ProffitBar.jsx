@@ -1,4 +1,4 @@
-
+import "./StockProffitDisplay.css"
 const ProffitBar = ({ stockData}) => {
     return(
         
