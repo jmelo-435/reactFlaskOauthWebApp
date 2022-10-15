@@ -2,7 +2,6 @@ import '../auth/Auth.css'
 import "./stockHeader.css"
 import "./StockDashboardBody.css"
 import ProffitBar from"./ProffitBar.jsx"
-import StockProffitDisplay from "./StockProffitDisplay.jsx"
 import Chart from './Chart.jsx'
 
 
