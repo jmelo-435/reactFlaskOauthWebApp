@@ -24,7 +24,13 @@ const Chart =({chartData})=>{
         </ResponsiveContainer>
 <ResponsiveContainer width="95%" height={200}>
   <AreaChart  syncId="id" data={chartData} margin={{top: 10,right: 30,left: 0,bottom: 0,}}>
-    <Area type="monotone" dataKey="lucro" fill="black" fillOpacity={0.5}/>
+    <defs>
+            <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset={off} stopColor="green" stopOpacity={1} />
+              <stop offset={off} stopColor="red" stopOpacity={1} />
+            </linearGradient>
+    </defs>
+    <Area type="monotone" dataKey="lucro" fill="url(#splitColor)" fillOpacity={0.5}/>
     <Tooltip/>
     <CartesianGrid stroke="#ccc" />
     <XAxis dataKey="date" />
