@@ -3,7 +3,21 @@ import { AreaChart, Area, CartesianGrid, XAxis, YAxis,Tooltip,ResponsiveContaine
 
 
 const Chart =({chartData})=>{
-
+  const gradientOffset = () => {
+    const dataMax = Math.max(...chartData.map((i) => i.uv));
+    const dataMin = Math.min(...chartData.map((i) => i.uv));
+  
+    if (dataMax <= 0) {
+      return 0;
+    }
+    if (dataMin >= 0) {
+      return 1;
+    }
+  
+    return dataMax / (dataMax - dataMin);
+  };
+  
+  const off = gradientOffset();
 
     return(
         <div>
