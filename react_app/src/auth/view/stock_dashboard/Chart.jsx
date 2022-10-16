@@ -41,7 +41,7 @@ const Chart =({chartData})=>{
 
     return(
         <div>
-<h2>Cotação</h2>
+<h3>Cotação</h3>
        <ResponsiveContainer width="95%" height={200}>
        <AreaChart  syncId="id" data={chartData}
   margin={{
@@ -57,7 +57,7 @@ const Chart =({chartData})=>{
     <YAxis />
   </AreaChart>
         </ResponsiveContainer>
-<h2>CLucro líquido</h2>
+<h3>Lucro líquido</h3>
 <ResponsiveContainer width="95%" height={200}>
   <AreaChart  syncId="id" data={chartData} margin={{top: 10,right: 30,left: 0,bottom: 0,}}>
     <defs>
