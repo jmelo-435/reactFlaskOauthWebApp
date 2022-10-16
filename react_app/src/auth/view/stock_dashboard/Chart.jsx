@@ -14,7 +14,7 @@ const Chart =({chartData})=>{
       return 1;
     }
 
-    if(dataMax==null || dataMin==null){
+    if(dataMax=="NaN"|| dataMin=="NaN"){
       return 0
     }
   
