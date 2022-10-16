@@ -13,6 +13,10 @@ const Chart =({chartData})=>{
     if (dataMin >= 0) {
       return 1;
     }
+
+    if(dataMax==null || dataMin==null){
+      return 0
+    }
   
     return dataMax / (dataMax - dataMin);
   };
