@@ -50,6 +50,7 @@ button {
     overflow-y: auto;
     -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
     box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+    height: 100vh;
 }
 
 .mainDashboardBody {
