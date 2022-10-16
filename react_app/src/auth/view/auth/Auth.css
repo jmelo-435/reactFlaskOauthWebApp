@@ -39,13 +39,14 @@ button {
     width: 30vw;
     height: 100vh;
     overflow-y: auto;
+    justify-self: center;
+    align-self: center;
 
 }
 
 .mainDash {
     grid-area: mainDash;
     background: #ECEFF1;
-    height: 100vh;
     overflow-y: auto;
     -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
     box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;

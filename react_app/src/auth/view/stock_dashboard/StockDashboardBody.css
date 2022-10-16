@@ -33,8 +33,7 @@
 .footer {
     grid-area: footer;
     background-color: #263238;
-    height: 20vh;
-}
+    }
 .stockHeader{
     width: 100%;
 }
