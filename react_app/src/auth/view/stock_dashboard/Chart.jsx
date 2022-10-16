@@ -4,8 +4,24 @@ import { AreaChart, Area, CartesianGrid, XAxis, YAxis,Tooltip,ResponsiveContaine
 
 const Chart =({chartData})=>{
   const gradientOffset = () => {
-    const dataMax = Math.max(...chartData.map((i) => i?.lucro));
-    const dataMin = Math.min(...chartData.map((i) => i?.lucro));
+    const dataMax = Math.max(...chartData.map((i) =>{
+      if (i?.lucro=="NaN"){
+        return 0
+      }
+      else{
+        return i?.lucro
+
+      }
+    } ));
+    const dataMin = Math.min(...chartData.map((i) =>{
+      if (i?.lucro=="NaN"){
+        return 0
+      }
+      else{
+        return i?.lucro
+
+      }
+    }));
   
     if (dataMax <= 0) {
       return 0;
