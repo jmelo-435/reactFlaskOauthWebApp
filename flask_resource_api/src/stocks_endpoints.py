@@ -2,7 +2,9 @@ from flask import Flask, jsonify, make_response, request,send_from_directory
 from ..database import get_db
 import os
 from ..verify_api_key import compare_keys
-from .repo import return_stock_price, update_stock_price, return_stocks_list,_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance, return_stock_data,return_stock_graph_data
+from .repo import return_stock_price, update_stock_price, return_stocks_list,\
+_set_historical_close,return_stock_prices_days_ago,update_stocks_relevance,\
+ return_stock_data,return_stock_graph_data,_return_segments_list,_return_stocks_from_segment
 from .security_decorators import valid_api_key_required
 
 db = get_db()
@@ -81,6 +83,23 @@ def get_stock_graph_data(id):
 @valid_api_key_required
 def update_historical_close():
     return _set_historical_close()
+
+@valid_api_key_required
+def get_segments_list():
+    try:
+        lista_segmentos= _return_segments_list()
+        return make_response({"segmentos":lista_segmentos,"sucess":True})
+    except:
+        return make_response({"sucess":False}),500
+
+@valid_api_key_required
+def get_stocks_from_segment(segment):
+    try:
+        lista_empresas= _return_stocks_from_segment(segment)
+        return make_response({"segmentos":lista_empresas,"sucess":True})
+    except:
+        return make_response({"sucess":False}),500
+
 
 def retrieve_stock_image(ativo):
     basedir = os.path.abspath(os.path.dirname(__file__))

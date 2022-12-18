@@ -1,0 +1,4 @@
+-export collection from mongoDb Docker image:
+	 docker exec -i 0d74028e688f  mongoexport --db fakeTrade --collection historical --type=json --out historical.json
+-export file from docker image to machine:
+	docker cp 0d74028e688f:historical.json .

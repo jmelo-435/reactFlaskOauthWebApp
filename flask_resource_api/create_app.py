@@ -1,6 +1,9 @@
 from flask import Flask
 
-from .src.stocks_endpoints import get_stock, get_stocks_list, update_stock,update_historical_close,test,get_stocks_list_days_ago,update_relevance,retrieve_stock_image,get_stock_data,get_stock_graph_data
+from .src.stocks_endpoints import get_stock, get_stocks_list, update_stock,update_historical_close,\
+test,get_stocks_list_days_ago,\
+update_relevance,retrieve_stock_image,get_stock_data,get_stock_graph_data,\
+get_segments_list,get_stocks_from_segment
 from .src.user_endpoints import create_user,get_user_saldo
 application = Flask(__name__)
 application.debug = True
@@ -15,6 +18,8 @@ application.add_url_rule('/api_res/stocks/<days>', 'gtListOneYearAgo', get_stock
 application.add_url_rule('/api_res/stock/<id>', 'gtStockData', get_stock_data, methods=['OPTIONS','GET'])
 application.add_url_rule('/api_res/stock/graph/<id>', 'gtStockGraphData', get_stock_graph_data, methods=['OPTIONS','GET'])
 application.add_url_rule('/api_res/stocks/image/<ativo>', 'gtAtivoImg', retrieve_stock_image, methods=['OPTIONS','GET'])
+application.add_url_rule('/api_res/stocks/segments', 'gtAtivosSegmentos', get_segments_list, methods=['OPTIONS','GET'])
+application.add_url_rule('/api_res/stock/segment/<segment>', 'gtAtivoDeSegmento', get_stocks_from_segment, methods=['OPTIONS','GET'])
 application.add_url_rule('/api_res/users', 'ctUser', create_user, methods=['GET'])
 application.add_url_rule('/api_res/user/saldo', 'userSaldo', get_user_saldo, methods=['GET'])
 application.add_url_rule('/api_res/stocks/historical_update', 'histUpdate',update_historical_close, methods=['GET'])

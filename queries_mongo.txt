@@ -1,0 +1,4 @@
+-retornar todos os segmentos:
+	db.balance.distinct('segmento')
+- retornar ações de segmento específico:
+	db.balance.find({"segmento":'Vestuário'},{"id":1})

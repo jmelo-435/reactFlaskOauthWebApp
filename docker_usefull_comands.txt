@@ -1,0 +1,3 @@
+-stop all docker containers
+	sudo docker stop $(sudo docker ps -a -q)
+

@@ -178,3 +178,9 @@ def _set_historical_close():
         return jsonify({"sucess": True})
     except:
         return jsonify({"sucess": False})
+
+def _return_segments_list():
+    return db.balance.distinct('segmento')
+
+def _return_stocks_from_segment(segment):
+    return db.balance.find({'segmento':segment, 'id':1})

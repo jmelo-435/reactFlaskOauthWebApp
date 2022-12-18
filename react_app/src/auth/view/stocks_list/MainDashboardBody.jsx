@@ -3,7 +3,7 @@ import StocksPriceList from './StocksPriceList';
 import SearchBar from './SearchBar';
 import StockDashboardBody from '../stock_dashboard/StockDashboardBody';
 import { useState, useEffect } from 'react'
-import { returnMainDashStocksInfoList, returnSelectedStockData } from '../../domain/mainDashboardFunctions';
+import { returnMainDashStocksInfoList, returnSelectedStockData,returnSegmentsList } from '../../domain/mainDashboardFunctions';
 import { returnStockDashboardChartData } from '../../domain/mainDashboardFunctions'
 
 const MainDashboardBody = () => {
@@ -76,6 +76,17 @@ const MainDashboardBody = () => {
             }
         }
     }, [searchQuery])
+
+    useEffect(()=>{
+        async function fetch() {
+            const response = await returnSegmentsList()
+            console.log(response)
+          
+        }
+        fetch();
+    }
+
+    )
     return (
         <div className="main">
             <section className="mainDashboardBody">
