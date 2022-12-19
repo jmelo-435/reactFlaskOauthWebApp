@@ -50,7 +50,7 @@ const Chart =({chartData})=>{
     left: 0,
     bottom: 0,
   }}>
-    <Area type="monotone" dataKey="close" fill="#8884d8" fillOpacity={0.5}/>
+    <Area type="monotone" dataKey="close" fill="#000000" />
     <CartesianGrid stroke="#ccc" />
     <Tooltip/>
     <XAxis dataKey="date" />
@@ -66,7 +66,7 @@ const Chart =({chartData})=>{
               <stop offset={off} stopColor="red" stopOpacity={1} />
             </linearGradient>
     </defs>
-    <Area type="monotone" dataKey="lucro" fill="url(#splitColor)" fillOpacity={0.5}/>
+    <Area type="monotone" dataKey="lucro" fill="url(#splitColor)" />
     <Tooltip/>
     <CartesianGrid stroke="#ccc" />
     <XAxis dataKey="date" />

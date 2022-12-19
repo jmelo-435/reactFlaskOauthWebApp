@@ -183,4 +183,7 @@ def _return_segments_list():
     return db.balance.distinct('segmento')
 
 def _return_stocks_from_segment(segment):
-    return db.balance.find({'segmento':segment, 'id':1})
+    stocks = db.balance.find(
+        {'segmento':segment}, {"realtime.value": 1, "name": 1, "relevance": 1})
+    stocks_list = [stock for stock in stocks]
+    return stocks_list

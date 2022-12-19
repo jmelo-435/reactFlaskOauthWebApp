@@ -12,6 +12,8 @@ const MainDashboardBody = () => {
     const [stocks, setStocks] = useState([]);
     const [queriedStocks,setQueriedStocks]=useState([]);
     const [chartData,setChartData]=useState([]);
+    const [segments,setSegments]=useState([]);
+    const [segment,setSegment]=useState("Todos");
     const [selectedStock,setSelectedStock]=useState({
         id:"PETR4",
         name:"",
@@ -36,15 +38,15 @@ const MainDashboardBody = () => {
      })
     useEffect(() => {
         async function fetch() {
-            const response = await returnMainDashStocksInfoList()
-            console.log(response)
+            const response = await returnMainDashStocksInfoList(segment)
+            console.log(segment)
             setStocks(response.sort((a, b) => a.relevance - b.relevance));
             setQueriedStocks(response.sort((a, b) => a.relevance - b.relevance));
           
         }
         fetch();
 
-    }, []);
+    }, [segment]);
 
     useEffect(() => {
         async function fetch(){
@@ -77,22 +79,35 @@ const MainDashboardBody = () => {
         }
     }, [searchQuery])
 
+    const handleChange = event => {
+        console.log(event.target.value);
+        setSegment(event.target.value);
+      };
+
     useEffect(()=>{
         async function fetch() {
+             
             const response = await returnSegmentsList()
-            console.log(response)
+            setSegments(["Todos"].concat(response))
           
         }
         fetch();
     }
-
+,[]
     )
     return (
         <div className="main">
             <section className="mainDashboardBody">
-            
+                <div className="item sideBarTop">
+                <h1>Categoria</h1>
+
+                <select value = {segment} onChange = {handleChange}>
+                            {segments.map((segmento)=><option value = {String(segmento)}>{segmento}</option>)}
+                </select>
+                </div>
                 <div className="item sideBar">
                     <div>
+                        
                         <StocksPriceList stocks={queriedStocks} selectStock={setSelectedStock} />
                     </div>
                 </div>

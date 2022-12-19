@@ -9,10 +9,11 @@ function returnPercentage(price, laterPrice) {
         return "-" + ((1 - variation)*100).toFixed(2) + "%"
     }
 }
-export async function returnMainDashStocksInfoList() {
+export async function returnMainDashStocksInfoList(segment) {
 
     const stocksDataList = []
-    const stocksList = await getStocksList()
+    console.log(segment+"111")
+    const stocksList = await getStocksList(segment)
     stocksList.stocksList.map((stock) => {
         
         const stockData = {

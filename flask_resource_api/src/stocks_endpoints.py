@@ -44,12 +44,19 @@ def get_stock_data(id):
 
 
 @valid_api_key_required
-def get_stocks_list():
-    try:
-        stock_list = return_stocks_list()
-        return jsonify({"list": stock_list,"success": True})
-    except :
-        return make_response({"msg": "Algo deu errado.","success": False}), 500
+def get_stocks_list(segment):
+    if segment == "Todos":
+        try:
+            stock_list = return_stocks_list()
+            return jsonify({"list": stock_list,"success": True})
+        except :
+            return make_response({"msg": "Algo deu errado.","success": False}), 500
+    else:
+        try:
+            stock_list = _return_stocks_from_segment(segment)
+            return jsonify({"list": stock_list,"success": True})
+        except :
+            return make_response({"msg": "Algo deu errado.","success": False}), 500
 
 @valid_api_key_required
 def get_stocks_list_days_ago(days):
@@ -95,10 +102,11 @@ def get_segments_list():
 @valid_api_key_required
 def get_stocks_from_segment(segment):
     try:
-        lista_empresas= _return_stocks_from_segment(segment)
-        return make_response({"segmentos":lista_empresas,"sucess":True})
-    except:
-        return make_response({"sucess":False}),500
+        stock_list = _return_stocks_from_segment(segment)
+        return jsonify({"list": stock_list,"success": True})
+    except :
+        return make_response({"msg": "Algo deu errado.","success": False}), 500
+
 
 
 def retrieve_stock_image(ativo):

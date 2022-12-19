@@ -4,7 +4,7 @@ const apiKey = "_zUYQ83k!x34%nh(";
 
 const ResEndpoints = Object.freeze({
     Api: "/api_res",
-    ApiStocksList: "/api_res/stocks/list",
+    ApiStocksList: "/api_res/stocks/list/",
     ApiStocksListDaysAgo:"/api_res/stocks/",
     ApiStockData:"/api_res/stock/",
     ApiStockChartData:"/api_res/stock/graph/",
@@ -42,8 +42,9 @@ const ResEndpoints = Object.freeze({
     });
     return response.data;
   }
-
-  export async function getStocksList(token = "") {
+///TODO:fazer a filtragem por segmento chegar até aqui
+  export async function getStocksList(segment) {
+    
     class GetStoksListResponse {
       constructor(res) {
         this.sucess = res.sucess;
@@ -53,11 +54,12 @@ const ResEndpoints = Object.freeze({
     }
   
     const params = new AuthApiRequestParameters(
-      ResEndpoints.ApiStocksList,
+      ResEndpoints.ApiStocksList+segment,
       "{}",
       Methods.GET
     );
-    const response = await getResApiResponse(params, token);
+    
+    const response = await getResApiResponse(params);
     return new GetStoksListResponse(response);
   }
   export async function getStocksListDaysAgo(days, token ="") {

@@ -34,13 +34,48 @@ button {
 }
 
 .sideBar {
+
     grid-area: sideBar;
     background: #90A4AE;
     width: 30vw;
-    height: 100vh;
+    height: 90vh;
+
     overflow-y: auto;
     justify-self: center;
     align-self: center;
+
+}
+.sideBarTop {
+    display: flex;
+    flex-direction: column;
+    grid-area: sideBarTop;
+    background: #90A4AE;
+    align-content: space-around;
+    width: 30vw;
+    height: 10vh;
+    justify-self: center;
+    align-self: center;
+    padding: 0.5rem;
+
+}
+.sideBarTop h1{
+    font-size: 25px;
+    color: #FFFFFF;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+select{
+    background-color: #263238;
+    width: 95%;
+    height: 5vh;
+    border-radius: 0.2rem;
+    font-size: 25px;
+    color: #607D8B;
+    align-self: center;
+    justify-self:end;
+    
 
 }
 
@@ -56,7 +91,7 @@ button {
 .mainDashboardBody {
     display: grid;
     grid-template-areas:
-        "sideBar sideBar mainDash mainDash mainDash"
+        "sideBarTop sideBarTop mainDash mainDash mainDash"
         "sideBar sideBar mainDash mainDash mainDash"
         "sideBar sideBar mainDash mainDash mainDash"
         "sideBar sideBar mainDash mainDash mainDash";
